@@ -68,4 +68,40 @@ push!(inds, 4)
 @test 1 ∈ Mask{2}(1)
 @test 2 ∉ Mask{2}(1)
 
+
+# sum
+@test_throws AssertionError sum([1, 2], Mask{1}())
+
+c = sum(1:4, Mask{4}())
+@test isa(c, Int)
+@test c == 0
+
+c = sum([1., 2., 3., 4.], Mask{4}())
+@test isa(c, Float64)
+@test c == 0
+
+c = sum(complex([1., 2., 3., 4.]), Mask{4}())
+@test isa(c, Complex128)
+@test c == 0
+
+@test sum(1:4, Mask{4}(2, 4)) == 6
+
+
+# prod
+@test_throws AssertionError prod([1, 2], Mask{1}())
+
+c = prod(1:4, Mask{4}())
+@test isa(c, Int)
+@test c == 1
+
+c = prod([1., 2., 3., 4.], Mask{4}())
+@test isa(c, Float64)
+@test c == 1
+
+c = prod(complex([1., 2., 3., 4.]), Mask{4}())
+@test isa(c, Complex128)
+@test c == 1
+
+@test prod(1:4, Mask{4}(2, 4)) == 8
+
 end # testset

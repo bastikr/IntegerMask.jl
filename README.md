@@ -16,6 +16,8 @@ which is typed onto this maximum number of elements. Currently the following fun
 * intersect: `a ∩ b`, `intersect(a, b)`
 * setdiff: `a \ b`, `setdiff(a, b)`
 * in: `i ∈ a`, `in(i, a)`
+* sum: `sum(collection, mask)`
+* product: `prod(collection, mask)`
 
 
 ## Development status

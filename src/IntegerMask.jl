@@ -133,4 +133,22 @@ end
 
 Base.in{N}(i::Int, m2::Mask{N}) = in(i, m2.indices)
 
+function Base.prod{N}(a::AbstractArray, m::Mask{N})
+    @assert length(a) == N
+    c = one(eltype(a))
+    @inbounds for i in m.indices
+        c *= a[i]
+    end
+    c
+end
+
+function Base.sum{N}(a::AbstractArray, m::Mask{N})
+    @assert length(a) == N
+    c = zero(eltype(a))
+    @inbounds for i in m.indices
+        c += a[i]
+    end
+    c
+end
+
 end #module
