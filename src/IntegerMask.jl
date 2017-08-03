@@ -13,6 +13,8 @@ Mask{N}(indices::Int...) where N = Mask{N}(Int[indices...])
 
 Base.copy{N}(m::Mask{N}) = Mask{N}(copy(m.indices))
 
+Base.length(m::Mask) = length(m.indices)
+
 =={N}(m1::Mask{N}, m2::Mask{N}) = m1.indices == m2.indices
 
 

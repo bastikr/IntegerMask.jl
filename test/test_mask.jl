@@ -14,6 +14,11 @@ push!(inds, 4)
 @test m2.indices == [2, 3]
 
 
+# length
+@test length(Mask{10}()) == 0
+@test length(Mask{3}(1, 2)) == 2
+
+
 # equality
 @test Mask{3}(1, 2) == Mask{3}(1, 2)
 @test Mask{3}(1, 2) != Mask{3}(3)
