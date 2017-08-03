@@ -49,8 +49,10 @@ push!(inds, 4)
 @test Mask{2}() ∩ Mask{2}(1) == Mask{2}()
 @test Mask{2}(1) ∩ Mask{2}() == Mask{2}()
 @test Mask{4}(1, 3) ∩ Mask{4}(2, 3) == Mask{4}(3)
+@test Mask{4}(2, 3) ∩ Mask{4}(1, 3) == Mask{4}(3)
 @test Mask{4}(2, 4) ∩ Mask{4}(3, 4) == Mask{4}(4)
-@test Mask{4}(2, 3, 4) ∩ Mask{4}(3, 4) == Mask{4}(3, 4)
+@test Mask{6}(1, 3, 5, 6) ∩ Mask{6}(2, 3, 4) == Mask{6}(3)
+@test Mask{6}(2, 3, 4) ∩ Mask{6}(1, 3, 5, 6) == Mask{6}(3)
 
 
 # setdiff
