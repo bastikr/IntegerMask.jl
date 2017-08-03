@@ -42,7 +42,7 @@ julia> Pkg.clone("https://github.com/bastikr/IntegerMask.jl.git")
 [travis-img]: https://api.travis-ci.org/bastikr/IntegerMask.jl.png?branch=master
 
 [appveyor-url]: https://ci.appveyor.com/project/bastikr/IntegerMask-jl/branch/master
-[appveyor-img]: https://ci.appveyor.com/api/projects/status/heib5o43485r90uq/branch/master?svg=true
+[appveyor-img]: https://ci.appveyor.com/api/projects/status/ajhy6kmf30epfhur/branch/master?svg=true
 
 [coveralls-url]: https://coveralls.io/github/bastikr/IntegerMask.jl?branch=master
 [coveralls-img]: https://coveralls.io/repos/github/bastikr/IntegerMask.jl/badge.svg?branch=master
