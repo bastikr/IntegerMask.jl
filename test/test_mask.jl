@@ -109,4 +109,17 @@ c = prod(complex([1., 2., 3., 4.]), Mask{4}())
 
 @test prod(1:4, Mask{4}(2, 4)) == 8
 
+
+# reduce
+@test_throws AssertionError reduce(+, [1, 2], Mask{1}())
+@test_throws AssertionError reduce(+, [], Mask{0}())
+
+c = reduce(*, 1:4, Mask{4}(2, 4))
+@test isa(c, Int)
+@test c == 8
+
+c = reduce(+, [[1,3], [5,2], [6,3], [2, -9]], Mask{4}(1, 3))
+@test isa(c, Vector{Int})
+@test c == [7, 6]
+
 end # testset

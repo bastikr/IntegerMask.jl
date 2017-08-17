@@ -153,4 +153,15 @@ function Base.sum{N}(a::AbstractArray, m::Mask{N})
     c
 end
 
+function Base.reduce{N}(f::Function, a::AbstractArray, m::Mask{N})
+    @assert length(a) == N
+    l = length(m)
+    @assert l > 0
+    c = a[m.indices[1]]
+    for i in 2:l
+        c = f(c, a[m.indices[i]])
+    end
+    c
+end
+
 end #module
