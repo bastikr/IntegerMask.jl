@@ -18,6 +18,7 @@ which is typed onto this maximum number of elements. Currently the following fun
 * in: `i ∈ a`, `in(i, a)`
 * sum: `sum(collection, mask)`
 * product: `prod(collection, mask)`
+* reduce: `reduce(func, collection, mask)`
 
 
 ## Development status
